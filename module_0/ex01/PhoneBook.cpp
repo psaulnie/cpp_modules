@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:48:50 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/10 19:07:52 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/05/11 09:39:33 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ void	PhoneBook::search(void)
 		std::cout << "There is nobody registered on your PhoneBook ;(";
 		return;
 	}
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|" << std::right << std::setw(10) << "Index" << std::setfill(' ');
+	std::cout << "|" << std::right << std::setw(10) << "First Name" << std::setfill(' ');
+	std::cout << "|" << std::right << std::setw(10) << "Last Name" << std::setfill(' ');
+	std::cout << "|" << std::right << std::setw(10) << "Nickname" << std::setfill(' ') << "|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	i = 0;
 	while (i < 8 && this->array[i].getIndex() != -1)
