@@ -6,15 +6,16 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:17:01 by lbattest          #+#    #+#              #
-#    Updated: 2022/05/13 09:42:50 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/05/13 10:05:56 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = megaphone.cpp
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+INCS = Zombie.hpp
 OBJS = ${SRCS:.cpp=.o}
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 CC = c++
-NAME = megaphone
+NAME = zombies
 
 .PHONY:	all clean fclean re
 

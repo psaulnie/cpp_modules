@@ -6,7 +6,7 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:17:01 by lbattest          #+#    #+#              #
-#    Updated: 2022/05/10 19:03:39 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/05/13 09:42:47 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,5 @@ clean:
 
 fclean: clean
 		rm -f ${NAME}
-		rm -rf megaphone.dSYM
 
 re: fclean all
