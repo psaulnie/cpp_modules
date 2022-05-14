@@ -6,16 +6,15 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:17:01 by lbattest          #+#    #+#              #
-#    Updated: 2022/05/14 18:03:50 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/05/14 18:03:40 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
-INCS = Zombie.hpp
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
-NAME = zombieHorde
+NAME = violence
 
 .PHONY:	all clean fclean re
 

@@ -6,7 +6,7 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:17:01 by lbattest          #+#    #+#              #
-#    Updated: 2022/05/14 14:49:38 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/05/14 18:03:45 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = brains
 
 all: ${NAME}
 
-%.o:	%.c
+%.o:	%.cpp
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}

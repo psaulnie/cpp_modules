@@ -6,7 +6,7 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:17:01 by lbattest          #+#    #+#              #
-#    Updated: 2022/05/13 09:42:50 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/05/14 18:04:04 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = megaphone
 
 all: ${NAME}
 
-%.o:	%.c
+%.o:	%.cpp
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
