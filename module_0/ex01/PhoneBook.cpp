@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:48:50 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/11 09:39:33 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/05/26 14:49:41 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	PhoneBook::search(void)
 	{
 		std::cout << "Index (0-7)> ";
 		std::cin >> index;
+		if (index.empty())
+			return ;
 		if (index.length() != 1 || !(index[0] >= '0' && index[0] <= '7'))
 		{
 			std::cout << "Invalid index, try again" << std::endl;
@@ -88,7 +90,11 @@ void	PhoneBook::search(void)
 
 void	PhoneBook::add(void)
 {
-	std::string	buffer;
+	std::string	fname;
+	std::string	lname;
+	std::string	nname;
+	std::string	pnumber;
+	std::string	dsecret;
 	int			i;
 	int			replacedIndex;
 
@@ -103,20 +109,30 @@ void	PhoneBook::add(void)
 	if (i == 8)
 		i = 0;
 	std::cout << "First Name : ";
-	std::cin >> buffer;
-	this->array[i].set(0, buffer);
+	std::cin >> fname;
+	if (fname.empty())
+		return ;
 	std::cout << "Last Name : ";
-	std::cin >> buffer;
-	this->array[i].set(1, buffer);
+	std::cin >> lname;
+	if (lname.empty())
+		return ;
 	std::cout << "Nickname : ";
-	std::cin >> buffer;
-	this->array[i].set(2, buffer);
+	std::cin >> nname;
+	if (nname.empty())
+		return ;
 	std::cout << "Phone Number : ";
-	std::cin >> buffer;
-	this->array[i].set(3, buffer);
+	std::cin >> pnumber;
+	if (pnumber.empty())
+		return ;
 	std::cout << "Darkest Secret : ";
-	std::cin >> buffer;
-	this->array[i].set(4, buffer);
+	std::cin >> dsecret;
+	if (dsecret.empty())
+		return ;
 	this->array[i].isEmpty = 0;
+	this->array[i].set(0, fname);
+	this->array[i].set(1, lname);
+	this->array[i].set(2, nname);
+	this->array[i].set(3, pnumber);
+	this->array[i].set(4, dsecret);
 	return;
 }

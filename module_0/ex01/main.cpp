@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:42:30 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/10 18:51:15 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/05/26 14:48:26 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@ int	main(void)
 
 	while (1)
 	{
+		command = "";
 		std::cout << "PhoneBook> ";
 		std::cin >> command;
+		if (command.empty())
+		{
+			std::cout << std::endl << "EOF Signal received: end of program" << std::endl;
+			break ;
+		}
 		if (command == "EXIT\0")
 			break ;
 		else if (command == "ADD\0")
