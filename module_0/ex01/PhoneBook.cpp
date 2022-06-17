@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:48:50 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/26 14:49:41 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/06/17 16:30:01 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	PhoneBook::search(void)
 	while (1)
 	{
 		std::cout << "Index (0-7)> ";
-		std::cin >> index;
+		std::getline(std::cin, index);
 		if (index.empty())
 			return ;
 		if (index.length() != 1 || !(index[0] >= '0' && index[0] <= '7'))
@@ -109,23 +109,23 @@ void	PhoneBook::add(void)
 	if (i == 8)
 		i = 0;
 	std::cout << "First Name : ";
-	std::cin >> fname;
+	std::getline(std::cin, fname);
 	if (fname.empty())
 		return ;
 	std::cout << "Last Name : ";
-	std::cin >> lname;
+	std::getline(std::cin, lname);
 	if (lname.empty())
 		return ;
 	std::cout << "Nickname : ";
-	std::cin >> nname;
+	std::getline(std::cin, nname);
 	if (nname.empty())
 		return ;
 	std::cout << "Phone Number : ";
-	std::cin >> pnumber;
+	std::getline(std::cin, pnumber);
 	if (pnumber.empty())
 		return ;
 	std::cout << "Darkest Secret : ";
-	std::cin >> dsecret;
+	std::getline(std::cin, dsecret);
 	if (dsecret.empty())
 		return ;
 	this->array[i].isEmpty = 0;
