@@ -18,10 +18,10 @@ class Fixed
 		int					value;
 		static const int	bitsNbr;
 	public:
-		Fixed(void);
-		~Fixed(void);
+		Fixed(void); // default constructor
+		~Fixed(void); // destructor
 
-		Fixed(const Fixed &f);
+		Fixed(const Fixed &f); // copy constructor
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
