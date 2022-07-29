@@ -14,6 +14,7 @@
 # define	FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -22,12 +23,17 @@ class Fixed
 		static const int	bitsNbr = 8;
 	public:
 		Fixed(void); // default constructor
+		Fixed(int const nbr); // int constructor
+		Fixed(float const nbr); // float constructor
 		Fixed(const Fixed &f); // copy constructor
 		Fixed	&operator=(Fixed const &copy); // copy assignement constructor
+		// Fixed	&operator<<(Fixed);
 		~Fixed(void); // destructor
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 };
 
 #endif
