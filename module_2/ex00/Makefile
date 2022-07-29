@@ -11,6 +11,7 @@
 # **************************************************************************** #
 
 SRCS = main.cpp Fixed.cpp
+INCS = Fixed.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
@@ -24,7 +25,7 @@ all: ${NAME}
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+		${CC} ${CFLAGS} ${OBJS} -o ${NAME} -I ${INCS}
 
 
 clean:

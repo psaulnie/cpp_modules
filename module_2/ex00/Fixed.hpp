@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef	FIXED_HPP
+# define	FIXED_HPP
+
 #include <iostream>
 
 class Fixed
@@ -21,7 +24,10 @@ class Fixed
 		Fixed(void); // default constructor
 		~Fixed(void); // destructor
 
+		Fixed	&operator=(Fixed const &copy); // copy assignement constructor
 		Fixed(const Fixed &f); // copy constructor
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
+
+#endif
