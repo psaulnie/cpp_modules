@@ -13,8 +13,8 @@
 #ifndef	FIXED_HPP
 # define	FIXED_HPP
 
-#include <iostream>
-#include <cmath>
+# include <iostream>
+# include <cmath>
 
 class Fixed
 {
@@ -27,7 +27,6 @@ class Fixed
 		Fixed(float const nbr); // float constructor
 		Fixed(const Fixed &f); // copy constructor
 		Fixed	&operator=(Fixed const &copy); // copy assignement constructor
-		// Fixed	&operator<<(Fixed);
 		~Fixed(void); // destructor
 
 		int		getRawBits(void) const;
@@ -35,5 +34,7 @@ class Fixed
 		float	toFloat(void) const;
 		int		toInt(void) const;
 };
+
+std::ostream	&operator<<(std::ostream& os, Fixed const &curr);
 
 #endif

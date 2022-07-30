@@ -42,10 +42,6 @@ Fixed	&Fixed::operator=(Fixed const &copy)
 	return(*this);
 }
 
-// Fixed	&Fixed::operator<<(void)
-// {
-// 	return (this->value);
-// }
 
 Fixed::Fixed(const Fixed &f)
 {
@@ -55,7 +51,6 @@ Fixed::Fixed(const Fixed &f)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits called" << std::endl;
 	return(this->value);
 }
 
@@ -72,4 +67,10 @@ float	Fixed::toFloat(void) const
 int		Fixed::toInt(void) const
 {
 	return (this->value >> this->bitsNbr);
+}
+
+std::ostream	&operator<<(std::ostream& os, Fixed const &curr)
+{
+	os << curr.toFloat();
+	return (os);
 }
