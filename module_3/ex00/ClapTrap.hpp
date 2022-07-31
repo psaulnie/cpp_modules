@@ -6,11 +6,14 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:05:53 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/07/30 11:17:14 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/07/31 10:42:16 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+
+# include <iostream>
 
 class ClapTrap
 {
@@ -25,7 +28,14 @@ class ClapTrap
 		ClapTrap &operator=(ClapTrap const &copy);
 		~ClapTrap();
 
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int	amount);
-		void	beRepaired(unsigned int	amount);
+		void		attack(const std::string& target);
+		void		takeDamage(unsigned int	amount);
+		void		beRepaired(unsigned int	amount);
+
+		std::string	getName(void);
+		int			getHp(void);
+		int			getEnergy(void);
+		int			getAttack(void);
 };
+
+#endif
