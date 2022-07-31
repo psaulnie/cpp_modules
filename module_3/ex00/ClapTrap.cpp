@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:05:28 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/07/31 10:41:32 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/07/31 15:10:54 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,28 @@ ClapTrap::ClapTrap(std::string name)
 {
     std::cout << "Default constructor called" << std::endl;
     this->name = name;
+    this->energy = 10;
+    this->hp = 10;
+    this->attack_point = 0;
 }
 
 ClapTrap::ClapTrap(ClapTrap &copy)
 {
     std::cout << "Copy constructor called" << std::endl;
     this->name = copy.getName();
+    this->hp = copy.getHp();
     this->energy = copy.getEnergy();
-    this->attack = copy.getAttack();
+    this->attack_point = copy.getAttack();
 }
 
-ClapTrap::ClapTrap &operator=(ClapTrap const &copy)
+ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
 {
     std::cout << "Assignation constructor called" << std::endl;
     this->name = copy.getName();
+    this->hp = copy.getHp();
     this->energy = copy.getEnergy();
-    this->attack = copy.getAttack();
+    this->attack_point = copy.getAttack();
+    return (*this);
 }
 
 ClapTrap::~ClapTrap()
@@ -52,7 +58,7 @@ void	ClapTrap::attack(const std::string& target)
         return ;
     }
     std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " 
-                << this->attack << " points of damage!" << std::endl;
+                << this->attack_point << " points of damage!" << std::endl;
     this->energy -= 1;
 }
 
@@ -60,7 +66,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->hp == 0)
         std::cout << "ClapTrap " << this->name << " has no more HP left! It'll be cruel to continue no?" << std::endl;
-    else if (this->hp - amount < 0)
+    else if ((int)(this->hp - amount) <= 0)
     {
         this->hp = 0;
         std::cout << "ClapTrap " << this->name << " took " << amount
@@ -95,22 +101,22 @@ void	ClapTrap::beRepaired(unsigned int amount)
                 << " energy points left!" << std::endl;
 }
 
-std::string ClapTrap::getName(void)
+std::string ClapTrap::getName(void) const
 {
     return (this->name);
 }
 
-int	ClapTrap::getHp(void)
+int	ClapTrap::getHp(void) const
 {
     return (this->hp);
 }
 
-int	ClapTrap::getEnergy(void)
+int	ClapTrap::getEnergy(void) const
 {
     return (this->energy);
 }
 
-int	ClapTrap::getAttack(void)
+int	ClapTrap::getAttack(void) const
 {
-    return (this->attack);
+    return (this->attack_point);
 }
