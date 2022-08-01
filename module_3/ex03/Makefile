@@ -6,12 +6,12 @@
 #    By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/30 11:01:25 by pierrot           #+#    #+#              #
-#    Updated: 2022/08/01 10:25:41 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/01 10:25:32 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
-INCS = ClapTrap.hpp -I ScavTrap.hpp -I FragTrap.hpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.hpp
+INCS = ClapTrap.hpp -I ScavTrap.hpp -I FragTrap.hpp -I DiamondTrap.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
