@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:05:43 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/07/31 15:39:21 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/01 09:35:02 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int main(void)
     
     std::cout << "Denis : " << Denis.getHp() << " - Bob : " << Bob.getHp() << std::endl;
     Bob.takeDamage(10);
+    Denis.attack("Bob");
 }
