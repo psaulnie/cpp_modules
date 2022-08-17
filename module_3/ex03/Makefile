@@ -6,16 +6,16 @@
 #    By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/30 11:01:25 by pierrot           #+#    #+#              #
-#    Updated: 2022/08/01 10:25:32 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/06 09:47:59 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.hpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 INCS = ClapTrap.hpp -I ScavTrap.hpp -I FragTrap.hpp -I DiamondTrap.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
-NAME = fragtrap
+NAME = diamondtrap
 
 .PHONY:	all clean fclean re
 
@@ -25,7 +25,7 @@ all: ${NAME}
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o ${NAME} -I ${INCS}
+		${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
 
 clean:

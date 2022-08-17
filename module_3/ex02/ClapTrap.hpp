@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:05:53 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/01 08:49:17 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/17 10:09:26 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class ClapTrap
 		int			energy;
 		int			attack_point;
 	public:
-		ClapTrap(void);
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &copy);
-		ClapTrap &operator=(ClapTrap const &copy);
-		~ClapTrap();
+		virtualClapTrap(void);
+		virtual ClapTrap(std::string name);
+		virtual ClapTrap(ClapTrap &copy);
+		virtual	ClapTrap &operator=(ClapTrap const &copy);
+		virtual ~ClapTrap();
 
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int	amount);

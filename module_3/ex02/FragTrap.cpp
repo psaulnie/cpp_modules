@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:02:35 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/01 10:12:59 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/04 10:28:14 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ FragTrap &FragTrap::operator=(FragTrap const &copy)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
+}
+
+
+void	FragTrap::attack(const std::string& target)
+{
+    if (this->hp == 0)
+    {
+        std::cout << "How could FragTrap " << this->name << " attack if he has no more HP!" << std::endl;
+        return ;
+    }
+    else if (this->energy <= 0)
+    {
+        std::cout << "FragTrap " << this->name << " has no more energy left!" << std::endl;
+        return ;
+    }
+    std::cout << "FragTrap " << this->name << " attacks " << target << ", causing " 
+                << this->attack_point << " points of damage!" << std::endl;
+    this->energy -= 1;
 }
 
 void    FragTrap::highFiveGuys()

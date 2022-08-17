@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:19:31 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/01 10:24:19 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/17 10:09:55 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,9 @@ class DiamondTrap : public ScavTrap, public FragTrap
         DiamondTrap(DiamondTrap &copy);
 		DiamondTrap &operator=(DiamondTrap const &copy);
         virtual ~DiamondTrap();
+
+        void    attack(const std::string &target);
+        void    whoAmI(void);
 };
-
-DiamondTrap::DiamondTrap(nam)
-{
-}
-
-DiamondTrap::~DiamondTrap()
-{
-}
 
 #endif
