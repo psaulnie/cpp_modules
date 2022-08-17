@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:02:38 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/17 10:09:50 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/17 12:12:11 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
-    public:
-        FragTrap(std::string name);
+	public:
+		FragTrap(std::string name);
 		FragTrap(FragTrap &copy);
 		FragTrap &operator=(FragTrap const &copy);
-        virtual ~FragTrap();
+		virtual ~FragTrap();
 
-        void    highFiveGuys(void);
+		void    highFiveGuys(void);
 };
 
 #endif

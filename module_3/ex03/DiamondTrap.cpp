@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:22:46 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/06 09:51:04 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/17 12:11:07 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
-void    attack(const std::string &target)
+void    DiamondTrap::attack(const std::string &target)
 {
-	ScavTrap::attack(target);
+	std::cout << "Attack " << target << std::endl;
 }
 
 void    DiamondTrap::whoAmI(void)
