@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 10:06:24 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/18 12:37:25 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/18 13:59:59 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ int	main(void)
 	meta2->makeSound();
 
 	std::cout << "----------------------------" << std::endl;
+
 	delete meta2;
 	delete i2;
 	delete j2;
+
 	std::cout << "----------------------------" << std::endl;
 }
