@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:02:35 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/01 10:12:59 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/18 09:40:50 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(void) : ClapTrap()
+{
+	std::cout << "FragTrap default constructor called" << std::endl;
+	this->hp = 100;
+	this->energy = 100;
+	this->attack_point = 30;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {

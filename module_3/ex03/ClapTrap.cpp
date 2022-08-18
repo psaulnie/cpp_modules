@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:05:28 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/01 09:47:26 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/18 09:40:25 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+    std::cout << "Default constructor called" << std::endl;
+    this->energy = 10;
+    this->hp = 10;
+    this->attack_point = 0;  
+}
 
 ClapTrap::ClapTrap(std::string name)
 {

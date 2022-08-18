@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 15:18:33 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/17 11:55:38 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/18 09:39:33 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ScavTrap : virtual public ClapTrap
 {
     public:
+        ScavTrap(void);
         ScavTrap(std::string name);
 		ScavTrap(ScavTrap &copy);
 		ScavTrap &operator=(ScavTrap const &copy);
