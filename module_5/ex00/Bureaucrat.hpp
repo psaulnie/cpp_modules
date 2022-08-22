@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:02:42 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/22 12:00:32 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 14:21:04 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <stdexcept>
+
 
 class Bureaucrat
 {
@@ -28,22 +29,31 @@ public:
 	Bureaucrat	&operator=(Bureaucrat const &copy);
 	~Bureaucrat();
 
-	std::string	getName();
-	int			getGrade();
+	std::string	getName() const;
+	int			getGrade() const;
+	
+	void		gradeUp();
+	void		gradeDown();
 
-	class BureaucratException : public std::exception
+	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char*	tooHigh() const throw()
+			virtual const char*	what() const throw()
 			{
 				return ("Bureaucrat::GradeTooHighException");
 			}
-			virtual const char*	tooLow() const throw()
+	};
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char*	what() const throw()
 			{
 				return ("Bureaucrat::GradeTooLowException");
 			}
 	};
+
 };
 
-#endif
+std::ostream	&operator<<(std::ostream& os, Bureaucrat const &curr);
 
+#endif

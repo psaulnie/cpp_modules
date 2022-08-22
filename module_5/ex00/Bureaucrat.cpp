@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:03:17 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/22 12:11:20 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 14:33:15 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,20 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name)
 	try
 	{
 		if (grade > 150)
-			throw BureaucratException::tooHigh();
+			throw	Bureaucrat::GradeTooLowException();
+		else if (grade < 1)
+			throw	Bureaucrat::GradeTooHighException();
 	}
-	catch(const BureaucratException& e)
+	catch(const Bureaucrat::GradeTooLowException& e)
 	{
-		std::cerr << e.tooHigh() << '\n';
+		std::cerr << e.what() << '\n';
+		return ;
 	}
-	
+	catch(const Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << '\n';
+		return ;
+	}
 	this->grade = grade;
 	return ;
 }
@@ -56,12 +63,48 @@ Bureaucrat::~Bureaucrat()
 	return ;
 }
 
-std::string	Bureaucrat::getName()
+std::string	Bureaucrat::getName() const
 {
 	return (this->name);
 }
 
-int	Bureaucrat::getGrade()
+int	Bureaucrat::getGrade() const
 {
 	return (this->grade);
+}
+
+void		Bureaucrat::gradeUp()
+{
+	try
+	{
+		if (this->grade - 1 < 1)
+			throw	Bureaucrat::GradeTooHighException();
+	}
+	catch (const GradeTooHighException& e)
+	{
+		std::cerr << e.what() << '\n';
+		return ;
+	}
+	this->grade -= 1;
+}
+
+void		Bureaucrat::gradeDown()
+{
+	try
+	{
+		if (this->grade + 1 > 150)
+			throw	Bureaucrat::GradeTooLowException();
+	}
+	catch (const GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+		return ;
+	}
+	this->grade += 1;
+}
+
+std::ostream	&operator<<(std::ostream& os, Bureaucrat const &curr)
+{
+	os << curr.getName() << ", bureaucrat grade " << curr.getGrade() << ".";
+	return (os);
 }
