@@ -6,14 +6,15 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 09:54:51 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/19 11:15:22 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 09:55:59 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : type("unknowm")
+AMateria::AMateria()
 {
+	this->type = "unknown";
 	std::cout << "AMateria default constructor called" << std::endl;
 }
 
@@ -43,7 +44,7 @@ std::string	const	&AMateria::getType() const
 	return (this->type);
 }
 
-void		use(ICharacter&	target)
+void		AMateria::use(ICharacter&	target)
 {
 	std::cout << "You use some magic to " << target.getName() << ". It's useless." << std::endl;
 }

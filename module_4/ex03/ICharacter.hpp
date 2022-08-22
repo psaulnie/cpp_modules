@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 09:33:56 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/19 09:39:51 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 09:25:04 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "AMateria.hpp"
+
+class	AMateria;
 
 class ICharacter
 {

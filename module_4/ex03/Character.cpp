@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 10:56:02 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/19 12:00:18 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 10:37:18 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Character::Character(std::string name)
 	this->inventory[1] = NULL;
 	this->inventory[2] = NULL;
 	this->inventory[3] = NULL;
+	this->garbage = NULL;
 }
 
 Character::Character(Character &copy)
@@ -90,7 +91,6 @@ void Character::unequip(int idx)
 	{
 		std::cout << "You've unequipped the " << this->inventory[idx]->getType()
 		<< " materia" << std::endl;
-		// need to store the old materia in case it's not deleted
 		this->inventory[idx] = NULL;
 	}
 }

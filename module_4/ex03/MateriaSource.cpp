@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 11:43:52 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/19 13:28:26 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 09:55:34 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,14 @@ void MateriaSource::learnMateria(AMateria* m)
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	int	i = 0;
-	while (this->inventory[i] != NULL || i < 4)
+	while ((this->inventory[i] && this->inventory[i]->getType() != type))
+	{
+		if (i == 3)
+			break ;
 		i++;
-	if (this->inventory[3] != NULL)
-		return (this->inventory[3]);
-	else
+	}
+	if (this->inventory[i] != NULL)
 		return (this->inventory[i]);
+	else
+		return (0);
 }

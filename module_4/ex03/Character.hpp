@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 10:56:07 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/19 11:33:06 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 10:34:39 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Character : public ICharacter
 	private:
 		std::string	name;
 		AMateria*	inventory[4];
+		AMateria*	garbage;
 	public:
 		Character(std::string name);
 		Character(Character &copy);

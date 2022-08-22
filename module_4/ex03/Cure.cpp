@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 10:41:52 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/19 10:47:03 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/22 09:38:55 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ Cure::Cure() : AMateria("cure")
 
 Cure::Cure(Cure &copy) : AMateria("cure")
 {
+	(void)copy;
 	std::cout << "Cure copy constructor called" << std::endl;	
 }
 
 Cure	&Cure::operator=(Cure &copy)
 {
+	this->type = copy.getType();
 	return (*this);
 }
 		
