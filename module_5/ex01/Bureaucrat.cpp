@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:03:17 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:14:49 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/23 09:26:12 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,33 @@ void		Bureaucrat::gradeDown()
 		return ;
 	}
 	this->grade += 1;
+}
+
+void		Bureaucrat::signForm(Form *form)
+{
+	try
+	{
+		if (form->getIsSigned() == true)
+			throw	Form::AlreadySigned();
+		else if (form->getSignGrade() < this->getGrade())
+			throw	Bureaucrat::GradeTooLowException();
+		else
+		{
+			form->setBeSigned();
+			std::cout << this->getName() << " signed " << form->getName() << std::endl;
+		}
+		
+	}
+	catch(const Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << form->getName()
+			<< " because his grade is too low !" << std::endl;
+	}
+	catch(const Form::AlreadySigned& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << form->getName()
+			<< " because the form is already signed !" << std::endl;
+	}
 }
 
 std::ostream	&operator<<(std::ostream& os, Bureaucrat const &curr)
