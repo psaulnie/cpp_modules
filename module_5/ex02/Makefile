@@ -6,15 +6,15 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 09:26:04 by psaulnie          #+#    #+#              #
-#    Updated: 2022/08/23 09:33:14 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/23 12:01:37 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
-NAME = form
+NAME = forms
 
 .PHONY:	all clean fclean re
 

@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:03:07 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:38:42 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/23 11:24:39 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form
 		Form(std::string name, int signGrade, int executeGrade);
 		Form(Form &copy);
 		Form	&operator=(Form &copy);
-		~Form();
+		virtual ~Form();
 
 		std::string	getName() const;
 		bool		getIsSigned() const;
@@ -37,6 +37,7 @@ class Form
 		void		setBeSigned();
 
 		void	beSigned(Bureaucrat *person);
+		virtual void	execute(Bureaucrat const &executor) = 0;
 
 		class GradeTooHighException : public std::exception
 		{
