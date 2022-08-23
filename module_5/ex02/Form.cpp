@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:03:51 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:27:35 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:37:07 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,36 @@ void	Form::beSigned(Bureaucrat *person)
 	
 }
 
-void		Form::setBeSigned()
+void	Form::setBeSigned()
 {
 	if (this->isSigned == true)
 		this->isSigned = false;
 	else
 		this->isSigned = true;
+}
+
+bool	Form::canBeExecuted(Bureaucrat const *person) const
+{
+	try
+	{
+		if (this->getIsSigned() == false)
+			throw	NotSignedFormException();
+		else if (this->getExecuteGrade() < person->getGrade())
+			throw	GradeTooLowException();
+		else
+			return true;
+	}
+	catch(const Form::NotSignedFormException& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return	false;
+	}
+	catch(const Form::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return	false;
+	}
+	
 }
 
 std::ostream	&operator<<(std::ostream& os, Form const &curr)

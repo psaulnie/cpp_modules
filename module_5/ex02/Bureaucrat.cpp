@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:03:17 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:26:12 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:57:34 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,11 @@ void		Bureaucrat::signForm(Form *form)
 		std::cerr << this->getName() << " couldn't sign " << form->getName()
 			<< " because the form is already signed !" << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm(Form const &form)
+{
+	form.execute(*this);
 }
 
 std::ostream	&operator<<(std::ostream& os, Bureaucrat const &curr)
