@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:48:50 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/06/17 16:30:01 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/24 13:48:44 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ PhoneBook::PhoneBook(void)
 	this->array[6].set(5, "6");
 	this->array[7].set(5, "7");
 	this->array[8].set(5, "-1");
+	this->oldest = 0;
 	return;
 }
 
@@ -107,7 +108,18 @@ void	PhoneBook::add(void)
 		i++;
 	}
 	if (i == 8)
-		i = 0;
+	{
+		if (this->oldest == 7)
+		{
+			this->oldest = 1;
+			i = 0;
+		}
+		else
+		{
+			i = this->oldest;
+			this->oldest += 1;
+		}
+	}
 	std::cout << "First Name : ";
 	std::getline(std::cin, fname);
 	if (fname.empty())
