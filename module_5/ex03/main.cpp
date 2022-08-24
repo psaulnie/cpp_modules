@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:02:34 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 14:58:26 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/24 08:55:32 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
@@ -51,10 +52,23 @@ int	main()
 	Timothee.executeForm(*paper3);
 	Timothee.signForm(paper3);
 	Timothee.executeForm(*paper3);
+	
+	std::cout << "---------------------" << std::endl;
+	
+	Intern	Titouan;
+
+	Form	*paper4 = Titouan.makeForm("robotomy reques", "Robert");
+	Form	*paper5 = Titouan.makeForm("presidential pardon", "Timothee");
+	
+	paper5->beSigned(&Georges);
+	paper5->execute(Georges);
+
+	(void)paper4;
 
 	std::cout << "---------------------" << std::endl;
 
 	delete	paper;
 	delete	paper2;
 	delete	paper3;
+	delete	paper5;
 }
