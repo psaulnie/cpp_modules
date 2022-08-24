@@ -6,13 +6,13 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 09:26:04 by psaulnie          #+#    #+#              #
-#    Updated: 2022/08/22 10:38:21 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/24 09:17:50 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp \
-
-# INCS = Cat.hpp -I Dog.hpp -I Animal.hpp
+SRCS = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp 
+INCS = AMateria.hpp Character.hpp Cure.hpp Ice.cpp \
+		ICharacter.hpp MateriaSource.hpp IMateriaSource.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
@@ -22,7 +22,7 @@ NAME = materia
 
 all: ${NAME}
 
-%.o:	%.cpp
+%.o:	%.cpp ${INCS}
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}

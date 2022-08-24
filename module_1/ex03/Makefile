@@ -6,7 +6,7 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:17:01 by lbattest          #+#    #+#              #
-#    Updated: 2022/05/14 18:03:40 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/24 09:14:58 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = violence
 
 all: ${NAME}
 
-%.o:	%.cpp
+%.o:	%.cpp ${INCS}
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}

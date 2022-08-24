@@ -6,7 +6,7 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 09:39:37 by psaulnie          #+#    #+#              #
-#    Updated: 2022/05/16 11:48:27 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/24 09:15:13 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = harlFilter
 
 all: ${NAME}
 
-%.o:	%.cpp
+%.o:	%.cpp ${INCS}
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}

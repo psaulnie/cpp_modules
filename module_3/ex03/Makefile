@@ -6,12 +6,12 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/30 11:01:25 by pierrot           #+#    #+#              #
-#    Updated: 2022/08/18 09:21:40 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/24 09:19:22 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
-INCS = ClapTrap.hpp -I ScavTrap.hpp -I FragTrap.hpp -I DiamondTrap.hpp
+INCS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 CC = c++
@@ -21,7 +21,7 @@ NAME = diamondtrap
 
 all: ${NAME}
 
-%.o:	%.cpp
+%.o:	%.cpp ${INCS}
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}

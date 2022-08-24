@@ -6,12 +6,14 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 09:26:04 by psaulnie          #+#    #+#              #
-#    Updated: 2022/08/24 08:52:07 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/24 09:21:06 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
 	RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+INCS = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp \
+	PresidentialPardonForm.hpp Intern.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
@@ -21,7 +23,7 @@ NAME = intern
 
 all: ${NAME}
 
-%.o:	%.cpp
+%.o:	%.cpp ${INCS}
 		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
