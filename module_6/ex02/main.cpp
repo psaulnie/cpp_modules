@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:34:28 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/26 15:45:00 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/29 11:06:26 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,70 @@
 
 Base    *generate(void)
 {
-    Base    *newBase;
-    std::srand(time(0));
-    switch ((std::rand() % 3) + 1)
+    int     index = 34;
+    switch (index)
     {
         case 1:
-            newBase = new A();
-            break;
+            return (new A);
         case 2:
-            newBase = new B();
+            return (new B);
         default:
-            newBase = new C();
-            break;
+            return (new C);
     }
-    return (newBase);
 }
 
 void    identify(Base *p)
 {
-
+    A    *test1 = dynamic_cast<A *>(p);
+    if (test1 != NULL)
+    {
+        std::cout << "A" << std::endl;
+        return ;
+    }
+    B    *test2 = dynamic_cast<B *>(p);
+    if (test2 != NULL)
+    {
+        std::cout << "B" << std::endl;
+        return ;
+    }
+    C    *test3 = dynamic_cast<C *>(p);
+    if (test3 != NULL)
+    {
+        std::cout << "C" << std::endl;
+        return ;
+    }
 }
 
 void    identify(Base &p)
 {
+    try
+    {
+        A   &a = dynamic_cast<A &>(p);
+        std::cout << "A" << std::endl;
+        (void)a;
+    }
+    catch(const std::exception& e) {}
+    try
+    {
+        B   &b = dynamic_cast<B &>(p);
+        std::cout << "B" << std::endl;
+        (void)b;
+    }
+    catch(const std::exception& e) {}
+    try
+    {
+        C   &c = dynamic_cast<C &>(p);
+        std::cout << "C" << std::endl;
+        (void)c;
+    }
+    catch(const std::exception& e) {}
     
 }
 
 int main()
 {
     Base*   base = generate();
-    
+    Base&   refBase = *base;
+    identify(refBase);
+    identify(base);
 }

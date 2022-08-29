@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:27:10 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/26 15:45:13 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/29 10:50:57 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Base
 {
     public:
-        virtual ~Base();
+        virtual ~Base() {};
 };
 
 

@@ -6,18 +6,19 @@
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:30:44 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/26 15:35:08 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/29 10:51:09 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_hpp
+#ifndef C_HPP
 # define C_HPP
 
 #include "Base.hpp"
 
 class C : public Base
 {
-    
+    public:
+        virtual ~C() {};
 };
 
 #endif

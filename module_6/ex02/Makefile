@@ -6,11 +6,11 @@
 #    By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 09:26:04 by psaulnie          #+#    #+#              #
-#    Updated: 2022/08/26 15:45:48 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/08/29 10:37:52 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Base.cpp
+SRCS = main.cpp
 INCS = Base.hpp A.hpp B.hpp C.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
