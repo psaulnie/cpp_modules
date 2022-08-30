@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Literal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 14:37:52 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/25 15:46:42 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/08/29 11:13:05 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Literal::operator	double()
 
 Literal::operator	char()
 {
-	char	val;
+	int	val;
 	if (this->value.size() == 1 && (this->value.c_str()[0] > 57 || this->value.c_str()[0] < 48))
 		val = this->value.c_str()[0];
 	else
