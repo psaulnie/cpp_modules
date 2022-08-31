@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 11:25:59 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/31 14:43:23 by psaulnie         ###   ########.fr       */
+/*   Created: 2022/08/31 15:22:40 by psaulnie          #+#    #+#             */
+/*   Updated: 2022/08/31 16:06:46 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
-int main()
+template<typename T>
+class MutantStack : public std::stack<T>
 {
-	Span sp = Span(34493295);
-	// sp.addNumber(6);
-	// sp.addNumber(3);
-	// sp.addNumber(17);
-	// sp.addNumber(9);
-	// sp.addNumber(11);
-	sp.addRange(-5, 342355);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-	return 0;
-}
+	public:
+		MutantStack();
+		MutantStack(MutantStack const &copy);
+		MutantStack	&operator=(MutantStack const &copy);
+		virtual ~MutantStack();
 
-/* 
-Expected output :
-2
-14
-*/
+	// class iterator
+	// {
+	// 	private:
+	// 		/* data */
+	// 	public:
+	// 		MutantStack(/* args */);
+	// 		~MutantStack();
+	// };
+	
+};
+
+#endif
