@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 15:08:18 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/14 18:01:43 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:37:13 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Weapon(std::string name);
 	~Weapon();
 	
-	const std::string	getType(void);
+	const std::string&	getType(void);
 	void				setType(std::string type);
 };
 

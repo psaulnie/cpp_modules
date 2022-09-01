@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 15:08:58 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/14 18:01:46 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:37:26 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Weapon::~Weapon()
 	return;
 }
 
-const std::string	Weapon::getType(void)
+const std::string&	Weapon::getType(void)
 {
 	return (this->type);
 }

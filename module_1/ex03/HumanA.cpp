@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 16:18:31 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/14 18:04:19 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:39:12 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ HumanA::~HumanA()
 
 void	HumanA::attack()
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	std::string	const &weap = this->weapon.getType();
+	std::cout << this->name << " attacks with their " << weap << std::endl;
 	return;
 }

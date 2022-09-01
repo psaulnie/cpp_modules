@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:40:16 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/05/16 10:53:17 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:56:37 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	replace(std::string str, std::ofstream &new_file, std::string old_str, std::
 	i = str.find(old_str);
 	while (i != -1)
 	{
-		std::cout << i + len - 1 << std::endl;
 		str.erase(i, len);
 		str.insert(i, new_str);
 		i = str.find(old_str, i + 1);
@@ -39,7 +38,7 @@ int	read_file(std::ifstream& file, std::string filename, std::string old_str, st
 	char	c = file.get();
 
 	new_file_name = filename.append(".replace");
-	new_file.open(new_file_name, std::ofstream::out);
+	new_file.open(new_file_name.c_str(), std::ofstream::out);
 	if (new_file.fail())
 	{
 		std::cout << "Failed to open the new file" << std::endl;
