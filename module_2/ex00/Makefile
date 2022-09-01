@@ -6,16 +6,16 @@
 #    By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 09:39:37 by psaulnie          #+#    #+#              #
-#    Updated: 2022/09/01 15:28:52 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/09/01 15:28:32 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Harl.cpp
-INCS = Harl.hpp
+SRCS = main.cpp Fixed.cpp
+INCS = Fixed.hpp
 OBJS = ${SRCS:.cpp=.o}
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
-NAME = harl
+NAME = fixed
 
 .PHONY:	all clean fclean re
 
