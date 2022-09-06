@@ -23,10 +23,10 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal(WrongAnimal &copy);
 		WrongAnimal	&operator=(WrongAnimal &copy);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 
 		std::string	getType(void) const;
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 

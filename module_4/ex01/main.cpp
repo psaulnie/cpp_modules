@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 10:06:24 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/18 15:37:29 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:13:27 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(void)
 		animals[i] = new Cat();
 		i++;
 	}
+	animals[4]->makeSound();
 	std::cout << "---------------------------------------" << std::endl;
 	i = 0;
 	while (i < 6)
@@ -36,7 +37,6 @@ int	main(void)
 		delete	animals[i];
 		i++;
 	}
-
 	std::cout << "Constructor---------------------------------------" << std::endl;
 	Cat* test = new Cat;
 	Cat* copy = new Cat(*test);

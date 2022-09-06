@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 10:09:02 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/18 12:35:58 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:07:59 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 		virtual	~Animal();
 
 		std::string	getType(void) const;
-		virtual void	makeSound() const;
+		virtual void	makeSound() const; // virtual used to "tell" the inherited classes need a makeSound function
 };
 
 

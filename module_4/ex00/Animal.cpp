@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 10:13:53 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/18 12:22:59 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:05:22 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ std::string	Animal::getType() const
 
 void	Animal::makeSound() const
 {
-	std::cout << "*weird noises*" << std::endl;
+	std::cout << "*animal noises*" << std::endl;
 }
