@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:03:07 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:38:42 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:34:11 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Form
 			public:
 				virtual const char*	what() const throw()
 				{
-					return ("Form::GradeTooHighException");
+					return ("The grade is too high !");
 				}
 		};
 
@@ -52,7 +52,7 @@ class Form
 			public:
 				virtual const char*	what() const throw()
 				{
-					return ("Form::GradeTooLowException");
+					return ("The grade is too low !");
 				}
 		};
 		class AlreadySigned : public std::exception
@@ -60,7 +60,7 @@ class Form
 			public:
 				virtual const char*	what() const throw()
 				{
-					return ("Form::AlreadySigned");
+					return ("The form is already signed !");
 				}
 		};
 		

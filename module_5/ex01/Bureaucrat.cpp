@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:03:17 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:26:12 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:34:31 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name)
 		else if (grade < 1)
 			throw	Bureaucrat::GradeTooHighException();
 	}
-	catch(const Bureaucrat::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return ;
-	}
-	catch(const Bureaucrat::GradeTooHighException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 		return ;
@@ -80,7 +75,7 @@ void		Bureaucrat::gradeUp()
 		if (this->grade - 1 < 1)
 			throw	Bureaucrat::GradeTooHighException();
 	}
-	catch (const GradeTooHighException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 		return ;
@@ -95,7 +90,7 @@ void		Bureaucrat::gradeDown()
 		if (this->grade + 1 > 150)
 			throw	Bureaucrat::GradeTooLowException();
 	}
-	catch (const GradeTooLowException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 		return ;
@@ -118,15 +113,9 @@ void		Bureaucrat::signForm(Form *form)
 		}
 		
 	}
-	catch(const Bureaucrat::GradeTooLowException& e)
+	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't sign " << form->getName()
-			<< " because his grade is too low !" << std::endl;
-	}
-	catch(const Form::AlreadySigned& e)
-	{
-		std::cerr << this->getName() << " couldn't sign " << form->getName()
-			<< " because the form is already signed !" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

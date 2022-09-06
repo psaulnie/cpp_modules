@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:03:51 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:27:35 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:35:14 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ try : name(name), signGrade(signGrade), executeGrade(executeGrade)
 	else if (signGrade < 1 || executeGrade < 1)
 		throw	GradeTooHighException();
 }
-catch(const Form::GradeTooHighException& e)
-{
-	std::cerr << e.what() << std::endl;
-}
-catch(const Form::GradeTooLowException& e)
+catch(const std::exception& e)
 {
 	std::cerr << e.what() << std::endl;
 }
@@ -81,11 +77,7 @@ void	Form::beSigned(Bureaucrat *person)
 		this->isSigned = true;
 		std::cout << this->getName() << " get signed by " << person->getName() << std::endl;
 	}
-	catch(const Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Form::AlreadySigned& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

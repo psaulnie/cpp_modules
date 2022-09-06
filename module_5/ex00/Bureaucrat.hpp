@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:02:42 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/22 14:21:04 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:24:57 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public:
 		public:
 			virtual const char*	what() const throw()
 			{
-				return ("Bureaucrat::GradeTooHighException");
+				return ("The grade is too high !");
 			}
 	};
 	class GradeTooLowException : public std::exception
@@ -48,7 +48,7 @@ public:
 		public:
 			virtual const char*	what() const throw()
 			{
-				return ("Bureaucrat::GradeTooLowException");
+				return ("The grade is too low !");
 			}
 	};
 
