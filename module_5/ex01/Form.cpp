@@ -6,14 +6,13 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:03:51 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/09/06 14:35:14 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:49:10 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string name, int signGrade, int executeGrade)
-try : name(name), signGrade(signGrade), executeGrade(executeGrade)
+Form::Form(std::string name, int signGrade, int executeGrade) : name(name), signGrade(signGrade), executeGrade(executeGrade)
 {
 	std::cout << "Form default constructor called" << std::endl;
 	this->isSigned = false;
@@ -21,10 +20,6 @@ try : name(name), signGrade(signGrade), executeGrade(executeGrade)
 		throw	GradeTooLowException();
 	else if (signGrade < 1 || executeGrade < 1)
 		throw	GradeTooHighException();
-}
-catch(const std::exception& e)
-{
-	std::cerr << e.what() << std::endl;
 }
 
 Form::Form(Form &copy) : name(copy.name), signGrade(copy.signGrade), executeGrade(copy.executeGrade)

@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:02:34 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 09:26:35 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:53:35 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,38 @@
 
 int	main()
 {
-	Bureaucrat	Bob("Bob", 151);
-	Bureaucrat	Georges("Georges", 2);
+	try
+	{
+		// Bureaucrat	Bob("Bob", 151);
 
-	Bureaucrat	Timothee(Georges);
+		Bureaucrat	Georges("Georges", 2);
 
-	Form		randomPaper("random", 5, 10);
+		Bureaucrat	Timothee(Georges);
 
-	std::cout << "---------------------" << std::endl;
+		Form		randomPaper("random", 5, 10);
 
-	Timothee.gradeUp();
-	std::cout << Timothee << std::endl;
-	Timothee.gradeUp();	
-	std::cout << Timothee << std::endl;
+		std::cout << "---------------------" << std::endl;
 
-	Bureaucrat Frederic("Frederic", 150);
-	Frederic.gradeDown();
+		Timothee.gradeUp();
+		std::cout << Timothee << std::endl;
+		Timothee.gradeUp();	
+		std::cout << Timothee << std::endl;
+
+		Bureaucrat Frederic("Frederic", 150);
+		Frederic.gradeDown();
 
 
-	std::cout << "---------------------" << std::endl;
+		std::cout << "---------------------" << std::endl;
 
-	Frederic.signForm(&randomPaper);
-	randomPaper.beSigned(&Georges);
+		Frederic.signForm(&randomPaper);
+		randomPaper.beSigned(&Georges);
 
-	randomPaper.beSigned(&Georges);
-	
-	std::cout << "---------------------" << std::endl;
+		randomPaper.beSigned(&Georges);
+		
+		std::cout << "---------------------" << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }

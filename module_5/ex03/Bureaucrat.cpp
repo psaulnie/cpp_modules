@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:03:17 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 14:57:34 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:58:24 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,10 @@ Bureaucrat::Bureaucrat() : name("Minion")
 Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name)
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
-	try
-	{
-		if (grade > 150)
-			throw	Bureaucrat::GradeTooLowException();
-		else if (grade < 1)
-			throw	Bureaucrat::GradeTooHighException();
-	}
-	catch(const Bureaucrat::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return ;
-	}
-	catch(const Bureaucrat::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return ;
-	}
+	if (grade > 150)
+		throw	Bureaucrat::GradeTooLowException();
+	else if (grade < 1)
+		throw	Bureaucrat::GradeTooHighException();
 	this->grade = grade;
 	return ;
 }

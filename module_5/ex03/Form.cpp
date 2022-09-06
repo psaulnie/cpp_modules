@@ -6,14 +6,13 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:03:51 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/23 14:37:07 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:56:45 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string name, int signGrade, int executeGrade)
-try : name(name), signGrade(signGrade), executeGrade(executeGrade)
+Form::Form(std::string name, int signGrade, int executeGrade) : name(name), signGrade(signGrade), executeGrade(executeGrade)
 {
 	std::cout << "Form default constructor called" << std::endl;
 	this->isSigned = false;
@@ -22,14 +21,7 @@ try : name(name), signGrade(signGrade), executeGrade(executeGrade)
 	else if (signGrade < 1 || executeGrade < 1)
 		throw	GradeTooHighException();
 }
-catch(const Form::GradeTooHighException& e)
-{
-	std::cerr << e.what() << std::endl;
-}
-catch(const Form::GradeTooLowException& e)
-{
-	std::cerr << e.what() << std::endl;
-}
+
 
 Form::Form(Form &copy) : name(copy.name), signGrade(copy.signGrade), executeGrade(copy.executeGrade)
 {
@@ -81,11 +73,7 @@ void	Form::beSigned(Bureaucrat *person)
 		this->isSigned = true;
 		std::cout << this->getName() << " get signed by " << person->getName() << std::endl;
 	}
-	catch(const Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(const Form::AlreadySigned& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -111,12 +99,7 @@ bool	Form::canBeExecuted(Bureaucrat const *person) const
 		else
 			return true;
 	}
-	catch(const Form::NotSignedFormException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		return	false;
-	}
-	catch(const Form::GradeTooLowException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 		return	false;
