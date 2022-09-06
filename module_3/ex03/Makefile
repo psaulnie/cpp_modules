@@ -6,14 +6,14 @@
 #    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/30 11:01:25 by pierrot           #+#    #+#              #
-#    Updated: 2022/08/24 09:19:22 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/09/06 11:52:05 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 INCS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 OBJS = ${SRCS:.cpp=.o}
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 NAME = diamondtrap
 

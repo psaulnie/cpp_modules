@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:05:43 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/18 09:53:59 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 11:57:25 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
     std::cout << "----------------------------------" << std::endl;
     FragTrap Denis("Denis");
     std::cout << "----------------------------------" << std::endl;
-    DiamondTrap Fabrice("Fabrice");
+    DiamondTrap Fabrice("Fabrice"); 
     std::cout << "----------------------------------" << std::endl;
 
     Bob.takeDamage(5);
@@ -40,6 +40,8 @@ int main(void)
     Robert.whoAmI();
     std::cout << Robert.getAttack() << " ; " << Robert.getEnergy() << " ; " << Robert.getHp()
             << " ;" << std::endl;
+    Robert.guardGate();
+    Robert.highFiveGuys();
 
     std::cout << "----------------------------------" << std::endl;
 

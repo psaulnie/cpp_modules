@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 11:05:28 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/18 09:40:25 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 10:40:53 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,13 @@ void	ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << this->name << " has no more energy left!" << std::endl;
         return ;
     }
-    if (amount + this->energy >= 2147483647)
-        this->energy = 2147483647;
+    if (amount + this->hp >= 2147483647)
+        this->hp = 2147483647;
     else
-        this->energy += amount;
+        this->hp += amount;
     std::cout << "ClapTrap " << this->name << " regenerates " << amount
-                << " energy points! He has now " << this->energy
-                << " energy points left!" << std::endl;
+                << " hit points! He has now " << this->hp
+                << " hit points left!" << std::endl;
 }
 
 std::string ClapTrap::getName(void) const
