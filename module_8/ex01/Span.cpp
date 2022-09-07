@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 11:29:45 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/09/06 16:26:19 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 16:24:25 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,39 +50,42 @@ void	Span::addRange(int number, int min, int max)
 	}
 }
 
-int		Span::shortestSpan()
+static bool abs_compare(int a, int b)
 {
-	int	min = INT_MAX;
-	int	second_min = INT_MAX;
-	int size = this->array.size();
-
-	for (int i = 0; i < size; i++)
-	{
-		if (this->array[i] < min)
-			min = this->array[i];
-	}
-	for (int i = 0; i < size; i++)
-	{
-		if (this->array[i] < second_min && this->array[i] != min)
-			second_min = this->array[i];
-	}
-	if (second_min == INT_MAX)
-		second_min = min;
-	return (second_min - min - 1);
+    return (std::abs(a) < std::abs(b));
 }
 
-int		Span::longestSpan()
+int		Span::shortestSpan()
 {
-	int	min = INT_MAX;
-	int	max = INT_MIN;
-	int size = this->array.size();
-
-	for (int i = 0; i < size; i++)
+	int	span = 2147483647;
+	int	min = 2147483647;
+	int	max = 2147483647;
+	
+	for (int i = 0; this->array[i]; i++)
 	{
-		if (this->array[i] < min)
-			min = this->array[i];
-		if (this->array[i] > max)
-			max = this->array[i];
+		for (int j = i + 1; this->array[j]; j++)
+		{
+			if (this->array[i] > this->array[j])
+			{
+				max = this->array[i];
+				min = this->array[j];
+			}
+			else
+			{
+				max = this->array[j];
+				min = this->array[i];	
+			}
+			if (span > max - min)
+				span = max - min;
+		}
 	}
-	return (max - min);
+	return span;
+}
+
+
+int		Span::longestSpan()
+{	
+	std::vector<int>::iterator	min = std::min_element(this->array.begin(), this->array.end());
+	std::vector<int>::iterator	max = std::max_element(this->array.begin(), this->array.end(), abs_compare);
+	return (*max - *min);
 }

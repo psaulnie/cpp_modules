@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 11:43:52 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/22 09:55:34 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 15:29:01 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ MateriaSource::MateriaSource(MateriaSource &copy)
 	{
 		if (copy.inventory[i] != NULL)
 			this->inventory[i] = copy.inventory[i]->clone();
+		else
+			this->inventory[i] = NULL;
 		i++;
 	}
 }
@@ -40,6 +42,8 @@ MateriaSource	&MateriaSource::operator=(MateriaSource &copy)
 	{
 		if (copy.inventory[i] != NULL)
 			this->inventory[i] = copy.inventory[i]->clone();
+		else
+			this->inventory[i] = NULL;
 		i++;
 	}
 	return (*this);

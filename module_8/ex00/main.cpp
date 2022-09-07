@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:18:15 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/31 10:33:42 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:45:31 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main()
 	{
 		int n = easyfind(l, 8);
 		std::cout << n << std::endl;
+		easyfind(l, 5656);
 	}
 	catch(std::exception& e)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:08:25 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/31 11:23:54 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:43:33 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	easyfind(T container, int n)
 	typename T::iterator	i = std::find(container.begin(), container.end(), n);
 	if (i == container.end())
 		throw std::exception();
-	return (*i);
+	return (std::distance(container.begin(), i));
 }
 
 #endif

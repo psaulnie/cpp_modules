@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 10:56:02 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/22 10:37:18 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 15:28:39 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ Character::Character(Character &copy)
 	{
 		if (copy.inventory[i] != NULL)
 			this->inventory[i] = copy.inventory[i]->clone();
+		else
+			this->inventory[i] = NULL;
 		i++;
 	}
 }
@@ -44,6 +46,8 @@ Character	&Character::operator=(Character &copy)
 	{
 		if (copy.inventory[i] != NULL)
 			this->inventory[i] = copy.inventory[i]->clone();
+		else
+			this->inventory[i] = NULL;
 		i++;
 	}
 	return (*this);
