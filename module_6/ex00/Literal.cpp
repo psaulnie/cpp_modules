@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 14:37:52 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/09/07 11:10:25 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 12:00:53 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool	Literal::isChar()
 {
 	const char	*val = this->value.c_str();
 
-	if (this->value.size() == 1 && val[0] > 57 && val[0] < 48)
+	if (this->value.size() == 1 && (val[0] > 57 || val[0] < 48))
 		return true;
 	return false;
 }
@@ -234,10 +234,21 @@ void	Literal::print()
 			std::cout << "double: " << dstr << std::endl;
 			break ;
 		default:
-			std::cout << "char: " << cval << std::endl;
+			if (cval >= 32)
+				std::cout << "char: '" << cval << "'" << std::endl;
+			else if (cval > 0)
+				std::cout << "char: Non displayable" << std::endl;
+			else
+				std::cout << "char: impossible" << std::endl;
 			std::cout << "int: " << ival << std::endl;
-			std::cout << "float: " << fval << "f" << std::endl;
-			std::cout << "double: " << dval << std::endl;
+			if (fval == (int)fval)
+				std::cout << "float: " << fval << ".0f" << std::endl;
+			else
+				std::cout << "float: " << fval << "f" << std::endl;
+			if (dval == (int)dval)
+				std::cout << "double: " << dval << ".0" << std::endl;
+			else
+				std::cout << "double: " << dval << std::endl;
 			break ;
 	}
 }
