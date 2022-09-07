@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 11:27:32 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/31 14:33:49 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:23:01 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Span
 		~Span();
 
 		void	addNumber(int n);
-		void	addRange(int min, int max);
+		void	addRange(int number, int min, int max);
 		int		shortestSpan();
 		int		longestSpan();
 };

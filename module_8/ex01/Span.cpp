@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 11:29:45 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/31 14:43:13 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:26:19 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <random>
 
 Span::Span(unsigned int n) : size(n), remaining(n) { }
 
@@ -26,10 +27,7 @@ Span	&Span::operator=(Span const &copy)
 	return (*this);
 }
 
-Span::~Span()
-{
-	// delete this->array;
-}
+Span::~Span() { }
 
 void	Span::addNumber(int n)
 {
@@ -39,11 +37,15 @@ void	Span::addNumber(int n)
 	remaining -= 1;
 }
 
-void	Span::addRange(int min, int max)
+void	Span::addRange(int number, int min, int max)
 {
-	for (int i = min; min < max && this->remaining != 0; i++)
+	std::srand(std::time(nullptr));
+	int	rand = std::rand() % (max - min + 1) + min;
+	for (int i = 0; i < number && this->remaining != 0; i++)
 	{
-		this->array.push_back(i);
+		rand = std::rand() % (max - min + 1) + min;
+		// std::cout << rand << std::endl;
+		this->array.push_back(rand);
 		this->remaining -= 1;
 	}
 }

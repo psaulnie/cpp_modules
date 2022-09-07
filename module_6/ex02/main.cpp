@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:34:28 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/29 11:06:26 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:17:23 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
+#include <random>
 
 Base    *generate(void)
 {
-    int     index = 34;
-    switch (index)
+    std::srand(std::time(nullptr));
+    switch (std::rand() % 3)
     {
         case 1:
             return (new A);

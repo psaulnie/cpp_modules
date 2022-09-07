@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:10:52 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/25 15:00:03 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 11:10:34 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,20 @@
 
 class Literal
 {
-private:
-	std::string	value;
-public:
-	Literal(std::string value);
-	Literal(Literal &copy);
-	Literal	&operator=(Literal &copy);
-	~Literal();
+	private:
+		std::string	value;
+	public:
+		Literal(std::string value);
+		Literal(Literal &copy);
+		Literal	&operator=(Literal &copy);
+		~Literal();
 
-	operator	int();
-	operator	float();
-	operator	double();
-	operator	char();
+		bool	isChar();
+		bool	isInt();
+		bool	isFloat();
+		bool	isDouble();
+
+		void	print();
 };
 
 #endif

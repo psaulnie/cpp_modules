@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:02:56 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/30 15:02:28 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:18:50 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ int main(int, char**)
     {
         numbers[i] = i;
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }

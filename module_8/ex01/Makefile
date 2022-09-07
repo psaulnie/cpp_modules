@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 09:26:04 by psaulnie          #+#    #+#              #
-#    Updated: 2022/08/31 14:30:08 by psaulnie         ###   ########.fr        #
+#    Updated: 2022/09/06 16:20:47 by psaulnie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp Span.cpp
 INCS = Span.hpp
 OBJS = ${SRCS:.cpp=.o}
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 NAME = span
 
