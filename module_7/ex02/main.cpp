@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:02:56 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/09/06 16:18:50 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:29:28 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
-    // srand(time(NULL));
+
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = i;
@@ -29,7 +29,6 @@ int main(int, char**)
     }
     //SCOPE
     {
-        std::cout << "A" << std::endl;
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }

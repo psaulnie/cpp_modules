@@ -3,28 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaulnie <psaulnie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 10:24:03 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/30 11:10:39 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:19:44 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
-
-// int main()
-// {
-// 	char	a = 'S';
-// 	char	b = 'c';
-
-// 	swap<char>(a, b);
-
-// 	std::cout << min<char>(a, b) << std::endl;
-// 	std::cout << max<char>(a, b) << std::endl;
-
-// 	std::cout << a << " " << b << std::endl;
-//     return 0;
-// }
 
 int main( void )
 {
