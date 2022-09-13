@@ -20,7 +20,7 @@ class PresidentialPardonForm : public Form
 	private:
 		std::string	target;
 	public:
-		PresidentialPardonForm(std::string name, std::string target);
+		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(PresidentialPardonForm &copy);
 		PresidentialPardonForm	&operator=(PresidentialPardonForm &copy);
 		~PresidentialPardonForm();

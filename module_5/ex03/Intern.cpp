@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:14:40 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/08/24 08:52:38 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:03:38 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,15 @@ Intern::~Intern()
 	std::cout << "Intern destructor called" << std::endl;
 }
 
-
-// void	(Harl::*array[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 Form*	Intern::makeForm(std::string name, std::string target)
 {
 	try
 	{
 		std::string	array[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
-		Form*		(Intern::*form[])(std::string name, std::string target) = {&Intern::createRobotomy, &Intern::createPresidential, &Intern::createShrubbery};
+		Form*		(Intern::*form[])(std::string target) = {&Intern::createRobotomy, &Intern::createPresidential, &Intern::createShrubbery};
 		for (int i = 0; i < 2; i++)
 			if (array[i] == name)
-				return ((this->*form[i])(name, target));
+				return ((this->*form[i])(target));
 		throw	std::exception();
 	}
 	catch(const std::exception& e)
@@ -58,17 +56,17 @@ Form*	Intern::makeForm(std::string name, std::string target)
 	
 }
 
-Form	*Intern::createRobotomy(std::string name, std::string target)
+Form	*Intern::createRobotomy(std::string target)
 {
-	return (new RobotomyRequestForm(name, target));
+	return (new RobotomyRequestForm(target));
 }
 
-Form	*Intern::createPresidential(std::string name, std::string target)
+Form	*Intern::createPresidential(std::string target)
 {
-	return (new PresidentialPardonForm(name, target));
+	return (new PresidentialPardonForm(target));
 }
 
-Form	*Intern::createShrubbery(std::string name, std::string target)
+Form	*Intern::createShrubbery(std::string target)
 {
-	return (new ShrubberyCreationForm(name, target));
+	return (new ShrubberyCreationForm(target));
 }

@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:02:34 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/09/06 14:58:50 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:04:18 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	main()
 
 		Bureaucrat	Timothee(Georges);
 
-		Form	*paper = new ShrubberyCreationForm("paper", "garden");
-		Form	*paper2 = new RobotomyRequestForm("paper2", "Roger");
-		Form	*paper3 = new PresidentialPardonForm("paper3", "Robert");
+		Form	*paper = new ShrubberyCreationForm("garden");
+		Form	*paper2 = new RobotomyRequestForm("Roger");
+		Form	*paper3 = new PresidentialPardonForm("Robert");
 
 		std::cout << "---------------------" << std::endl;
 
@@ -59,7 +59,7 @@ int	main()
 		
 		Intern	Titouan;
 
-		Form	*paper4 = Titouan.makeForm("robotomy reques", "Robert");
+		Form	*paper4 = Titouan.makeForm("robotomy request", "Robert");
 		Form	*paper5 = Titouan.makeForm("presidential pardon", "Timothee");
 		
 		paper5->beSigned(&Georges);
