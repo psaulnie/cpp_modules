@@ -6,7 +6,7 @@
 /*   By: psaulnie <psaulnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 14:37:52 by psaulnie          #+#    #+#             */
-/*   Updated: 2022/09/07 12:00:53 by psaulnie         ###   ########.fr       */
+/*   Updated: 2022/09/15 16:07:18 by psaulnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,16 @@ void	Literal::print()
 	{
 		istr = this->value;
 		ival = std::atoi(this->value.c_str());
+		if (this->value == "0" || ival == 127)
+		{
+			cstr = "Non displayable";
+			special = 3;
+		}
+		else if (ival > 127)
+		{
+			cstr = "impossible";
+			special = 3;
+		}
 		cval = static_cast<char>(ival);
 		fval = static_cast<float>(ival);
 		dval = static_cast<double>(ival);
@@ -232,6 +242,12 @@ void	Literal::print()
 			std::cout << "int: " << istr << std::endl;
 			std::cout << "float: " << fstr << std::endl;
 			std::cout << "double: " << dstr << std::endl;
+			break ;
+		case	3:
+			std::cout << "char: " << cstr << std::endl;
+			std::cout << "int: " << ival << std::endl;
+			std::cout << "float: " << fval << ".0f" << std::endl;
+			std::cout << "double: " << dval << "f" <<std::endl;
 			break ;
 		default:
 			if (cval >= 32)
